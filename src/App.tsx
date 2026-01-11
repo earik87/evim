@@ -73,7 +73,7 @@ const getNewHouseLoanPercentage = (price: number): number => {
 export default function App() {
   const [housePrice, setHousePrice] = useState<string>('')
   const [houseType, setHouseType] = useState<'secondhand' | 'new'>('secondhand')
-  const [language, setLanguage] = useState<'en' | 'tr'>('en')
+  const [language, setLanguage] = useState<'en' | 'tr'>('tr')
   const t = translations[language]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
