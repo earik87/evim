@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 const MAX_LOAN = 2_500_000 // Maximum loan: 2.5 million TRY
 const LOAN_TERM_YEARS: number = 10
@@ -290,6 +291,7 @@ export default function App() {
           {t.bddk}
         </a>
       </div>
+      <Analytics />
     </div>
   )
 }
