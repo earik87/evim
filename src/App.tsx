@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 const MAX_LOAN = 2_500_000 // Maximum loan: 2.5 million TRY
-const LOAN_TERM_YEARS = 10
-const MONTHLY_INTEREST_RATE = 0.0265 // 2.65% monthly rate
+const LOAN_TERM_YEARS: number = 10
+const MONTHLY_INTEREST_RATE: number = 0.0265 // 2.65% monthly rate
 
 const calculateMonthlyPayment = (principal: number): number => {
   if (principal <= 0) return 0
