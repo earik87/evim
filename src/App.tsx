@@ -137,40 +137,36 @@ export default function App() {
           </button>
         </div>
 
-        <div className="flex gap-4 mb-8">
-          <label className="flex items-center cursor-pointer">
-            <input
-              type="radio"
-              name="houseType"
-              value="new"
-              checked={houseType === 'new'}
-              onChange={(e) => setHouseType(e.target.value as 'secondhand' | 'new')}
-              className="mr-2"
-            />
-            <span className="text-sm font-medium text-gray-700">{language === 'en' ? 'New' : 'Yeni'}</span>
+        <div className="mb-8">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            {t.houseTypeLabel}
           </label>
-          <label className="flex items-center cursor-pointer">
-            <input
-              type="radio"
-              name="houseType"
-              value="secondhand"
-              checked={houseType === 'secondhand'}
-              onChange={(e) => setHouseType(e.target.value as 'secondhand' | 'new')}
-              className="mr-2"
-            />
-            <span className="text-sm font-medium text-gray-700">{language === 'en' ? 'Second-hand' : 'İkinci El'}</span>
-          </label>
+          <div className="flex gap-4">
+            <label className="flex items-center cursor-pointer">
+              <input
+                type="radio"
+                name="houseType"
+                value="new"
+                checked={houseType === 'new'}
+                onChange={(e) => setHouseType(e.target.value as 'secondhand' | 'new')}
+                className="mr-2"
+              />
+              <span className="text-sm font-medium text-gray-700">{language === 'en' ? 'New' : 'Yeni'}</span>
+            </label>
+            <label className="flex items-center cursor-pointer">
+              <input
+                type="radio"
+                name="houseType"
+                value="secondhand"
+                checked={houseType === 'secondhand'}
+                onChange={(e) => setHouseType(e.target.value as 'secondhand' | 'new')}
+                className="mr-2"
+              />
+              <span className="text-sm font-medium text-gray-700">{language === 'en' ? 'Second-hand' : 'İkinci El'}</span>
+            </label>
+          </div>
         </div>
-        
-        <a
-          href="https://www.bddk.org.tr/Mevzuat/DokumanGetir/1164"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block text-xs text-blue-600 hover:text-blue-800 underline mb-6"
-        >
-          {t.bddk}
-        </a>
-        
+
         <div className="mb-8">
           <label htmlFor="housePrice" className="block text-sm font-medium text-gray-700 mb-2">
             {t.housePriceLabel}
@@ -263,14 +259,14 @@ export default function App() {
                       <p>• Under 5M TRY: 80% loan</p>
                       <p>• 5-10M TRY: 70% loan</p>
                       <p>• 10-20M TRY: 60% loan</p>
-                      <p>• 20M+ TRY: 50% loan (max 2.5M)</p>
+                      <p>• 20M+ TRY: 50% loan</p>
                     </>
                   ) : (
                     <>
                       <p>• 5M TRY altı: %80 kredi</p>
                       <p>• 5-10M TRY: %70 kredi</p>
                       <p>• 10-20M TRY: %60 kredi</p>
-                      <p>• 20M+ TRY: %50 kredi (max 2.5M)</p>
+                      <p>• 20M+ TRY: %50 kredi</p>
                     </>
                   )}
                 </>
@@ -284,6 +280,15 @@ export default function App() {
             {t.invalidPrice}
           </div>
         )}
+
+        <a
+          href="https://www.bddk.org.tr/Mevzuat/DokumanGetir/1164"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-xs text-blue-600 hover:text-blue-800 underline mt-6"
+        >
+          {t.bddk}
+        </a>
       </div>
     </div>
   )
